@@ -1,196 +1,311 @@
-/* Global styles */
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap');
+
+/* Reset and Base Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #e7dacb;
+    --secondary-color: #742f37;
+    --background-color: #2d2a2e;
+    --accent-color: #6a7b76;
+    --text-light: #f8f5f0;
+    --text-dark: #333;
+    --transition-speed: 0.3s;
 }
 
 body {
-  background: linear-gradient(135deg, #2c3e50, #4a69bd);
-  color: #fff;
-  padding: 20px;
-  min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-light);
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header styles */
-header {
-  text-align: center;
-  padding: 20px;
-  margin-bottom: 30px;
-  animation: fadeIn 1.5s ease-in-out;
+/* Typography */
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
 }
 
 h1 {
-  color: #ffeaa7;
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-header p {
-  color: #dfe6e9;
-  font-size: 1.1rem;
-  padding: 5px 0;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Main content styles */
-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.destination-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: slideUp 0.7s ease-out forwards;
-  opacity: 0;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.destination-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.place-image {
-  width: 100%;
-  height: 220px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: transform 0.5s ease;
-}
-
-.destination-card:hover .place-image {
-  transform: scale(1.05);
-}
-
-.card-content {
-  padding: 15px;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
-  color: #ffeaa7;
-  font-style: italic;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-size: 1.8rem;
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 15px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    transition: transform var(--transition-speed);
 }
 
-.card-content p {
-  color: #dfe6e9;
-  padding: 0;
-  font-size: 0.9rem;
+h2:hover {
+    transform: translateX(10px);
 }
 
-/* Button styles */
-.view-more {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 8px 20px;
-  background-color: #e17055;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
+p {
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
 }
 
-.view-more:hover {
-  background-color: #d63031;
-  transform: scale(1.05);
+li {
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    list-style-position: inside;
 }
 
-/* Animation definitions */
+/* Layout */
+header {
+    background: linear-gradient(rgba(45, 42, 46, 0.7), rgba(45, 42, 46, 0.9)), url('strascathedrale.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Images */
+.Stras-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.Stras-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Lists */
+ul {
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+ul ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    list-style-type: none;
+}
+
+ul li::before {
+    content: "•";
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+b {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Animations */
 @keyframes fadeIn {
-  from {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Add animation to sections as they appear */
+h2, p, ul {
+    animation: slideIn 0.8s ease-out;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: rgba(45, 42, 46, 0.7);
+    border-radius: 8px;
+    transition: transform var(--transition-speed);
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+/* Navigation for a future enhancement */
+nav {
+    background-color: var(--accent-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+    padding: 0;
+}
+
+nav li::before {
+    content: none;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    h1, h2, p, ul, .Stras-img, section {
+        grid-column: span 2;
+    }
+    
+    .Stras-img {
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    h1, p:first-of-type, p:last-of-type {
+        grid-column: span 3;
+    }
+    
+    h2, section, .Stras-img {
+        grid-column: span 1;
+    }
+    
+    header {
+        padding: 8rem 0;
+    }
+}
+
+/* Small screen adjustments */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .Stras-img {
+        margin: 1rem 0;
+    }
+}
+
+/* Dark mode toggle - for future enhancement */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-speed);
+    z-index: 10;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--secondary-color);
+}
+
+/* Additional element for future enhancement */
+.scroll-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-speed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
     opacity: 0;
-  }
-  to {
+    visibility: hidden;
+    z-index: 10;
+}
+
+.scroll-to-top.visible {
     opacity: 1;
-  }
+    visibility: visible;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animation delay for cards */
-.destination-card:nth-child(1) { animation-delay: 0.1s; }
-.destination-card:nth-child(2) { animation-delay: 0.2s; }
-.destination-card:nth-child(3) { animation-delay: 0.3s; }
-.destination-card:nth-child(4) { animation-delay: 0.4s; }
-.destination-card:nth-child(5) { animation-delay: 0.5s; }
-.destination-card:nth-child(6) { animation-delay: 0.6s; }
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  .place-image {
-    height: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    grid-template-columns: 1fr;
-  }
-  
-  h1 {
-    font-size: 1.7rem;
-  }
-  
-  header p {
-    font-size: 1rem;
-  }
-  
-  .place-image {
-    height: 200px;
-  }
-}
-.bordeaux {
-  background-image: url("bordeaux.jpg");
-}
-
-.annecy {
-  background-image: url("Annency.jpg");
-}
-
-.strasbourg {
-  background-image: url("Strasbourg.jpg");
-}
-
-.marseille {
-  background-image: url("marseille.jpg");
-}
-
-.metz {
-  background-image: url("Metz.jpg");
-}
-
-.rouen {
-  background-image: url("Rouen.jpg");
+.scroll-to-top:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-color);
 }
